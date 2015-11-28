@@ -1,0 +1,6 @@
+#!/bin/sh
+
+stack build
+./copy-assets
+echo "Optimizing JS with closure"
+closure-compiler --compilation_level=ADVANCED_OPTIMIZATIONS assets/js/{rts,lib,out,runmain}.js > assets/js/app.min.js
