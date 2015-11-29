@@ -21,7 +21,7 @@ void f = f >> return ()
 
 someFunc :: IO ()
 someFunc = do
-    js_doc_append "Hello from GHCJS FFI!"
+    js_doc_append "Hello from GHCJS FFI! Live-reload 4"
     void $ currentDocument `mbind` (\ doc ->
             getBody doc `mbind` (\ body ->
               createElement doc (Just "div" :: Maybe String) `mbind` (\divElem -> do
@@ -29,3 +29,8 @@ someFunc = do
                  _ <- appendChild divElem t
                  _ <- appendChild body (Just divElem)
                  return Nothing)))
+    void $ currentDocument `mbind` (\ doc ->
+            getElementById doc ("main-title" :: String) `mbind` (\ title -> do
+                 t <- createTextNode doc ("Hello from GHCJS Dom!" :: String)
+                 _ <- appendChild title t
+                 return Nothing))

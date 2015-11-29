@@ -1,5 +1,5 @@
 #!/bin/sh
 
-live-reload assets/* --port=9999 &
+live-reload assets/* assets/*/* --port=9999 &
 
 stack build --file-watch --exec ./copy-assets
