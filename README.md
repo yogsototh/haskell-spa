@@ -1,3 +1,12 @@
+> This project has two homes.
+> It is ok to work in github, still, for a better decentralized web
+> please consider contributing (issues, PR, etc...) throught:
+>
+> https://gitlab.esy.fun/yogsototh/haskell-spa
+
+---
+
+
 # Haskell SPA
 
 This is a scaffold for a Haskell single page application.
